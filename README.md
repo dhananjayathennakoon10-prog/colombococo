@@ -138,7 +138,7 @@ footer{
     <h1>Colombo Coco</h1>
     <nav>
         <a href="#home">Home</a>
-        <a href="#products">Products</a>
+        <a href="products.html">Products</a>
         <a href="#export">Export</a>
         <a href="#contact">Contact</a>
     </nav>

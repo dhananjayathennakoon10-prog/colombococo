@@ -160,7 +160,7 @@ footer{
 
         <div class="grid">
             <div class="card">
-                <img src="https://tse2.mm.bing.net/th/id/OIP.6X69S8fpzXms4xwV6r5cAwAAAA?pid=ImgDet&w=190&h=285&c=7&o=7&rm=3">
+                <img src="https://github.com/dhananjayathennakoon10-prog/colombococo/blob/main/Gemini_Generated_Image_m9kf93m9kf93m9kf.png?raw=true">
                 <h3>500ml Coconut Oil</h3>
                 <p class="price">Rs. 470</p>
                 <a class="btn" href="https://wa.me/94704845611">Buy Now</a>

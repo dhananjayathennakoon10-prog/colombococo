@@ -174,9 +174,9 @@ footer{
             </div>
 
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1556228578-877c94ce3d4f">
+                <img src="https://github.com/dhananjayathennakoon10-prog/colombococo/blob/main/Gemini_Generated_Image_hk3jbnhk3jbnhk3j.png?raw=true">
                 <h3>Cooking Grade Oil</h3>
-                <p class="price">Rs. 1500</p>
+                <p class="price">Rs.1200</p>
                 <a class="btn" href="https://wa.me/94704845611">Buy Now</a>
             </div>
         </div>

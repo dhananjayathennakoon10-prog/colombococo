@@ -56,7 +56,7 @@ section{
 /* HERO */
 .hero{
     height:100vh;
-    background:url('https://images.pexels.com/photos/7148527/pexels-photo-7148527.jpeg') center/cover no-repeat;
+    background:url('https://github.com/dhananjayathennakoon10-prog/colombococo/blob/main/Gemini_Generated_Image_344sw8344sw8344s%20(1).png?raw=true') center/cover no-repeat;
     display:flex;
     align-items:center;
     justify-content:center;

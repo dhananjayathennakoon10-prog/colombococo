@@ -115,57 +115,40 @@
 <button class="order-btn" onclick="sendOrder()">Order via WhatsApp</button>
 
 <script>
-function loadCart() {
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  let cartDiv = document.getElementById('cart');
-  cartDiv.innerHTML = '';
-  let total = 0;
-  cart.forEach((item, index) => {
-    total += item.price * item.qty;
-    let itemDiv = document.createElement('div');
-    itemDiv.className = 'item';
-    itemDiv.innerHTML = `
-      <span>${item.name}</span>
-      <div class='qty-controls'>
-        <button onclick='changeQty(${index}, -1)'>-</button>
-        <input type='number' min='0' value='${item.qty}' onchange='updateQty(${index}, this.value)'>
-        <button onclick='changeQty(${index}, 1)'>+</button>
-      </div>
-      <span>Rs.${item.price * item.qty}</span>
-    `;
-    cartDiv.appendChild(itemDiv);
-  });
-  let totalDiv = document.createElement('div');
-  totalDiv.className = 'total';
-  totalDiv.innerHTML = `Total: Rs.<span id='totalPrice'>${total}</span>`;
-  cartDiv.appendChild(totalDiv);
+const whatsappNumber = "94784290091"; // YOUR NUMBER
+
+function updatePrice(){
+  let price = document.getElementById("product").value;
+  let qty = document.getElementById("qty").value;
+  document.getElementById("total").innerText = price * qty;
 }
 
-function updateQty(index, qty) {
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  cart[index].qty = parseInt(qty);
-  localStorage.setItem('cart', JSON.stringify(cart));
-  loadCart();
-}
+function sendOrder(){
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let address = document.getElementById("address").value;
+  let productText = document.getElementById("product").selectedOptions[0].text;
+  let qty = document.getElementById("qty").value;
+  let total = document.getElementById("total").innerText;
 
-function changeQty(index, delta) {
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  cart[index].qty = Math.max(0, cart[index].qty + delta);
-  localStorage.setItem('cart', JSON.stringify(cart));
-  loadCart();
-}
+  if(!name || !phone || !address){
+    alert("කරුණාකර සියලු විස්තර පුරවන්න");
+    return;
+  }
 
-function sendOrder() {
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  if(cart.length === 0) { alert('ඔබගේ cart හි කිසිම නිෂ්පාදනයක් නැත!'); return; }
-  let message = 'Colombo Coco Order%0A';
-  cart.forEach(item => { if(item.qty > 0) message += `${item.name} x ${item.qty}%0A`; });
-  let total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
-  message += `Total: Rs.${total}`;
-  window.open('https://wa.me/94704845611?text=' + message, '_blank');
-}
+  let msg =
+    "🥥 *Colombo Coco - New Order*%0A%0A" +
+    "👤 නම: " + name + "%0A" +
+    "📞 දුරකථන: " + phone + "%0A%0A" +
+    "🛒 නිෂ්පාදනය: " + productText + "%0A" +
+    "📦 ප්‍රමාණය: " + qty + "%0A" +
+    "💰 මුළු මුදල: LKR " + total + "%0A%0A" +
+    "🏠 ලිපිනය: " + address;
 
-window.onload = loadCart;
+  window.open("https://wa.me/" + whatsappNumber + "?text=" + msg, "_blank");
+}
 </script>
+
 </body>
 </html>
+
